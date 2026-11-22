@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luna - Little Comfort Pet</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="game-container">
+
+        <!-- HEADER -->
+        <header class="game-header">
+            <div class="logo">
+                <span class="logo-icon">🐾</span>
+                <div>
+                    <h1>Little Comfort Pet</h1>
+                    <p>Your little corner of happiness</p>
+                </div>
+            </div>
+
+            <div class="header-controls">
+                <button id="musicToggle" class="icon-button" title="Toggle music">
+                    ♫
+                </button>
+
+                <button id="soundToggle" class="icon-button" title="Toggle sound effects">
+                    🔊
+                </button>
+            </div>
+        </header>
+
+
+        <!-- PLAYER PROGRESS -->
+        <section class="progress-section">
+            <div class="level-info">
+                <span id="levelText">Level 1</span>
+                <span id="xpText">0 / 100 XP</span>
+            </div>
+
+            <div class="xp-track">
+                <div id="xpBar" class="xp-fill"></div>
+            </div>
+        </section>
+
+
+        <!-- MAIN GAME -->
+        <main class="main-game">
+
+            <!-- LUNA CHARACTER AREA -->
+            <section class="pet-section">
+
+                <div class="greeting">
+                    <h2>Meet Luna!</h2>
+                    <p>Your tiny friend is happy you're here.</p>
+                </div>
+
+                <div class="pet-room">
+
+                    <div class="room-decoration decoration-one">✦</div>
+                    <div class="room-decoration decoration-two">♡</div>
+                    <div class="room-decoration decoration-three">✧</div>
+
+                    <!-- LUNA VIDEO PLAYER -->
+                    <video
+                        id="lunaVideo"
+                        class="luna-video"
+                        autoplay
+                        muted
+                        playsinline
+                        preload="auto"
+                        aria-label="Luna the kitten">
+                    </video>
+
+                    <div class="pet-shadow"></div>
+
+                    <div class="pet-message">
+                        <p id="lunaMessage">
+                            Hi! I'm Luna. Let's spend some time together!
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="pet-status">
+                    <span id="moodText">Mood: Happy</span>
+                    <span id="petName">🐱 Luna</span>
+                </div>
+
+            </section>
+
+
+            <!-- PET STATS -->
+            <section class="stats-section">
+                <h2>How is Luna feeling?</h2>
+
+                <div class="stat-card">
+                    <div class="stat-heading">
+                        <span>😊 Happiness</span>
+                        <span id="happinessValue">80%</span>
+                    </div>
+                    <div class="stat-track">
+                        <div id="happinessBar" class="stat-fill happiness-fill"></div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-heading">
+                        <span>🍓 Hunger</span>
+                        <span id="hungerValue">30%</span>
+                    </div>
+                    <div class="stat-track">
+                        <div id="hungerBar" class="stat-fill hunger-fill"></div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-heading">
+                        <span>⚡ Energy</span>
+                        <span id="energyValue">80%</span>
+                    </div>
+                    <div class="stat-track">
+                        <div id="energyBar" class="stat-fill energy-fill"></div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-heading">
+                        <span>💗 Comfort</span>
+                        <span id="comfortValue">70%</span>
+                    </div>
+                    <div class="stat-track">
+                        <div id="comfortBar" class="stat-fill comfort-fill"></div>
+                    </div>
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- INTERACTIONS -->
+        <section class="interaction-section">
+            <h2>Spend some time with Luna</h2>
+            <p>Choose something fun to do together!</p>
+
+            <div class="interaction-grid">
+
+                <button class="action-button" data-action="feed">
+                    <span>🍓</span>
+                    <strong>Feed</strong>
+                </button>
+
+                <button class="action-button" data-action="play">
+                    <span>🧶</span>
+                    <strong>Play</strong>
+                </button>
+
+                <button class="action-button" data-action="cuddle">
+                    <span>🤗</span>
+                    <strong>Cuddle</strong>
+                </button>
+
+                <button class="action-button" data-action="sleep">
+                    <span>🌙</span>
+                    <strong>Sleep</strong>
+                </button>
+
+                <button class="action-button" data-action="story">
+                    <span>📖</span>
+                    <strong>Story Time</strong>
+                </button>
+
+            </div>
+        </section>
+
+
+        <!-- MOOD CHECK-IN -->
+        <section class="mood-section">
+            <h2>How are you feeling today?</h2>
+            <p>Whatever you're feeling, it's okay. You can share it with Luna.</p>
+
+            <div class="mood-options">
+
+                <button class="mood-button" data-mood="not-great">
+                    <span>🥺</span>
+                    <strong>Not great</strong>
+                </button>
+
+                <button class="mood-button" data-mood="okay">
+                    <span>😐</span>
+                    <strong>Just okay</strong>
+                </button>
+
+                <button class="mood-button" data-mood="good">
+                    <span>😊</span>
+                    <strong>Feeling good</strong>
+                </button>
+
+                <button class="mood-button" data-mood="peaceful">
+                    <span>😌</span>
+                    <strong>Peaceful</strong>
+                </button>
+
+            </div>
+
+            <div id="moodResponse" class="mood-response">
+                Luna is always here for you. 💗
+            </div>
+        </section>
+
+
+        <!-- COMFORT CORNER -->
+        <section class="comfort-section">
+            <h2>🌷 Your Comfort Corner</h2>
+            <p>Take a little break. You deserve a peaceful moment.</p>
+
+            <div class="comfort-card">
+
+                <div class="breathing-visual" id="breathingVisual">
+                    <span id="breathingText">Breathe</span>
+                </div>
+
+                <h3 id="breathingTitle">A moment just for you</h3>
+
+                <p id="breathingDescription">
+                    Follow the circle and take a few gentle breaths.
+                </p>
+
+                <button id="breathingButton" class="primary-button">
+                    Start Breathing
+                </button>
+
+            </div>
+
+            <div class="affirmation-card">
+                <span>💌 A little reminder</span>
+
+                <p id="affirmationText">
+                    You don't have to do everything today. One small step is enough.
+                </p>
+
+                <button id="newAffirmation" class="secondary-button">
+                    Another reminder
+                </button>
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer class="game-footer">
+            <p>Made with love, for little moments of comfort. 💗</p>
+            <p>Luna is here whenever you need a little company.</p>
+        </footer>
+
+    </div>
+
+
+    <!-- AUDIO ASSETS -->
+    <audio
+        id="backgroundMusic"
+        src="assets/audios/background-music.mp3"
+        loop>
+    </audio>
+
+    <audio
+        id="meowSound"
+        src="assets/audios/meow.mp3">
+    </audio>
+
+    <audio
+        id="purrSound"
+        src="assets/audios/purr.mp3">
+    </audio>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>
